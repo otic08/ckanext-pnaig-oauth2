@@ -1,0 +1,38 @@
+[project]
+name = "ckanext-pnaig-oauth2"
+version = "0.0.1"
+description = "OAuth2 integration for federated sign-in for PNAIG"
+readme = "README.md"
+authors = [
+    {name = "Giorgio Buckingham", email = "otic08@igp.gob.pe"}
+]
+license = {text = "AGPL"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+keywords = [ "CKAN", ]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/otic08/ckanext-pnaig-oauth2"
+
+[project.entry-points."ckan.plugins"]
+pnaig_oauth2 = "ckanext.pnaig_oauth2.plugin:PnaigOauth2Plugin"
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+        "ignore::sqlalchemy.exc.SADeprecationWarning",
+        "ignore::sqlalchemy.exc.SAWarning",
+        "ignore::DeprecationWarning",
+]
+addopts = "--ckan-ini test.ini"

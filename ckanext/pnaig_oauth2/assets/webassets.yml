@@ -1,0 +1,14 @@
+# pnaig_oauth2-js:
+#   filter: rjsmin
+#   output: ckanext-pnaig_oauth2/%(version)s-pnaig_oauth2.js
+#   contents:
+#     - js/pnaig_oauth2.js
+#   extra:
+#     preload:
+#       - base/main
+
+# pnaig_oauth2-css:
+#   filter: cssrewrite
+#   output: ckanext-pnaig_oauth2/%(version)s-pnaig_oauth2.css
+#   contents:
+#     - css/pnaig_oauth2.css
