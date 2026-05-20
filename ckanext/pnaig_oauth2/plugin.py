@@ -332,9 +332,9 @@ class PnaigOauth2Plugin(_PnaigOauth2Plugin, plugins.SingletonPlugin):
 
         db.init_db()
 
-        self.register_url = os.environ.get("CKAN_OAUTH2_REGISTER_URL", config.get('ckan.oauth2.register_url', None))
-        self.reset_url = os.environ.get("CKAN_OAUTH2_RESET_URL", config.get('ckan.oauth2.reset_url', None))
-        self.edit_url = os.environ.get("CKAN_OAUTH2_EDIT_URL", config.get('ckan.oauth2.edit_url', None))
-        self.authorization_header = os.environ.get("CKAN_OAUTH2_AUTHORIZATION_HEADER", config.get('ckan.oauth2.authorization_header', 'Authorization')).lower()
+        self.register_url = os.environ.get("CKAN_PNAIG_OAUTH2_REGISTER_URL", config.get('ckanext.pnaig_oauth2.register_url', None))
+        self.reset_url = os.environ.get("CKAN_PNAIG_OAUTH2_RESET_URL", config.get('ckanext.pnaig_oauth2.reset_url', None))
+        self.edit_url = os.environ.get("CKAN_PNAIG_OAUTH2_EDIT_URL", config.get('ckanext.pnaig_oauth2.edit_url', None))
+        self.authorization_header = os.environ.get("CKAN_PNAIG_OAUTH2_AUTHORIZATION_HEADER", config.get('ckanext.pnaig_oauth2.authorization_header', 'Authorization')).lower()
 
         plugins.toolkit.add_template_directory(config, 'templates')

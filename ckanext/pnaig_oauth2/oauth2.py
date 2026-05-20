@@ -68,29 +68,29 @@ class OAuth2Helper(object):
             log.debug('JWT public key loaded')
 
         # JWT token field names - configurable for different OAuth2 providers
-        self.jwt_username_field = str(os.environ.get('CKAN_OAUTH2_JWT_USERNAME_FIELD', cfg.get('ckan.oauth2.jwt.username_field', 'username'))).strip()
-        self.jwt_email_field = str(os.environ.get('CKAN_OAUTH2_JWT_EMAIL_FIELD', cfg.get('ckan.oauth2.jwt.email_field', 'email'))).strip()
-        self.jwt_fullname_field = str(os.environ.get('CKAN_OAUTH2_JWT_FULLNAME_FIELD', cfg.get('ckan.oauth2.jwt.fullname_field', 'name'))).strip()
-        self.jwt_firstname_field = str(os.environ.get('CKAN_OAUTH2_JWT_FIRSTNAME_FIELD', cfg.get('ckan.oauth2.jwt.firstname_field', 'given_name'))).strip()
-        self.jwt_lastname_field = str(os.environ.get('CKAN_OAUTH2_JWT_LASTNAME_FIELD', cfg.get('ckan.oauth2.jwt.lastname_field', 'family_name'))).strip()
+        self.jwt_username_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_JWT_USERNAME_FIELD', cfg.get('ckanext.pnaig_oauth2.jwt.username_field', 'username'))).strip()
+        self.jwt_email_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_JWT_EMAIL_FIELD', cfg.get('ckanext.pnaig_oauth2.jwt.email_field', 'email'))).strip()
+        self.jwt_fullname_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_JWT_FULLNAME_FIELD', cfg.get('ckanext.pnaig_oauth2.jwt.fullname_field', 'name'))).strip()
+        self.jwt_firstname_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_JWT_FIRSTNAME_FIELD', cfg.get('ckanext.pnaig_oauth2.jwt.firstname_field', 'given_name'))).strip()
+        self.jwt_lastname_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_JWT_LASTNAME_FIELD', cfg.get('ckanext.pnaig_oauth2.jwt.lastname_field', 'family_name'))).strip()
 
-        self.legacy_idm = str(os.environ.get('CKAN_OAUTH2_LEGACY_IDM', cfg.get('ckan.oauth2.legacy_idm', ''))).strip().lower() in ("true", "1", "on")
-        self.authorization_endpoint = str(os.environ.get('CKAN_OAUTH2_AUTHORIZATION_ENDPOINT', cfg.get('ckan.oauth2.authorization_endpoint', ''))).strip()
-        self.token_endpoint = str(os.environ.get('CKAN_OAUTH2_TOKEN_ENDPOINT', cfg.get('ckan.oauth2.token_endpoint', ''))).strip()
-        self.profile_api_url = str(os.environ.get('CKAN_OAUTH2_PROFILE_API_URL', cfg.get('ckan.oauth2.profile_api_url', ''))).strip()
-        self.client_id = str(os.environ.get('CKAN_OAUTH2_CLIENT_ID', cfg.get('ckan.oauth2.client_id', ''))).strip()
-        self.client_secret = str(os.environ.get('CKAN_OAUTH2_CLIENT_SECRET', cfg.get('ckan.oauth2.client_secret', ''))).strip()
-        self.scope = str(os.environ.get('CKAN_OAUTH2_SCOPE', cfg.get('ckan.oauth2.scope', ''))).strip()
-        self.profile_api_user_field = str(os.environ.get('CKAN_OAUTH2_PROFILE_API_USER_FIELD', cfg.get('ckan.oauth2.profile_api_user_field', ''))).strip()
-        self.profile_api_fullname_field = str(os.environ.get('CKAN_OAUTH2_PROFILE_API_FULLNAME_FIELD', cfg.get('ckan.oauth2.profile_api_fullname_field', ''))).strip()
-        self.profile_api_firstname_field = str(os.environ.get('CKAN_OAUTH2_PROFILE_API_FIRSTNAME_FIELD', cfg.get('ckan.oauth2.profile_api_firstname_field', ''))).strip()
-        self.profile_api_lastname_field = str(os.environ.get('CKAN_OAUTH2_PROFILE_API_LASTNAME_FIELD', cfg.get('ckan.oauth2.profile_api_lastname_field', ''))).strip()
-        self.profile_api_mail_field = str(os.environ.get('CKAN_OAUTH2_PROFILE_API_MAIL_FIELD', cfg.get('ckan.oauth2.profile_api_mail_field', ''))).strip()
-        self.profile_api_groupmembership_field = str(os.environ.get('CKAN_OAUTH2_PROFILE_API_GROUPMEMBERSHIP_FIELD', cfg.get('ckan.oauth2.profile_api_groupmembership_field', ''))).strip()
-        self.sysadmin_group_name = str(os.environ.get('CKAN_OAUTH2_SYSADMIN_GROUP_NAME', cfg.get('ckan.oauth2.sysadmin_group_name', ''))).strip()
-        self.token_response_path = str(os.environ.get('CKAN_OAUTH2_TOKEN_RESPONSE_PATH', cfg.get('ckan.oauth2.token_response_path', ''))).strip()
-        self.token_response_key = str(os.environ.get('CKAN_OAUTH2_TOKEN_RESPONSE_KEY', cfg.get('ckan.oauth2.token_response_key', 'access_token'))).strip()
-        self.profile_response_path = str(os.environ.get('CKAN_OAUTH2_PROFILE_RESPONSE_PATH', cfg.get('ckan.oauth2.profile_response_path', ''))).strip()
+        self.legacy_idm = str(os.environ.get('CKAN_PNAIG_OAUTH2_LEGACY_IDM', cfg.get('ckanext.pnaig_oauth2.legacy_idm', ''))).strip().lower() in ("true", "1", "on")
+        self.authorization_endpoint = str(os.environ.get('CKAN_PNAIG_OAUTH2_AUTHORIZATION_ENDPOINT', cfg.get('ckanext.pnaig_oauth2.authorization_endpoint', ''))).strip()
+        self.token_endpoint = str(os.environ.get('CKAN_PNAIG_OAUTH2_TOKEN_ENDPOINT', cfg.get('ckanext.pnaig_oauth2.token_endpoint', ''))).strip()
+        self.profile_api_url = str(os.environ.get('CKAN_PNAIG_OAUTH2_PROFILE_API_URL', cfg.get('ckanext.pnaig_oauth2.profile_api_url', ''))).strip()
+        self.client_id = str(os.environ.get('CKAN_PNAIG_OAUTH2_CLIENT_ID', cfg.get('ckanext.pnaig_oauth2.client_id', ''))).strip()
+        self.client_secret = str(os.environ.get('CKAN_PNAIG_OAUTH2_CLIENT_SECRET', cfg.get('ckanext.pnaig_oauth2.client_secret', ''))).strip()
+        self.scope = str(os.environ.get('CKAN_PNAIG_OAUTH2_SCOPE', cfg.get('ckanext.pnaig_oauth2.scope', ''))).strip()
+        self.profile_api_user_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_PROFILE_API_USER_FIELD', cfg.get('ckanext.pnaig_oauth2.profile_api_user_field', ''))).strip()
+        self.profile_api_fullname_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_PROFILE_API_FULLNAME_FIELD', cfg.get('ckanext.pnaig_oauth2.profile_api_fullname_field', ''))).strip()
+        self.profile_api_firstname_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_PROFILE_API_FIRSTNAME_FIELD', cfg.get('ckanext.pnaig_oauth2.profile_api_firstname_field', ''))).strip()
+        self.profile_api_lastname_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_PROFILE_API_LASTNAME_FIELD', cfg.get('ckanext.pnaig_oauth2.profile_api_lastname_field', ''))).strip()
+        self.profile_api_mail_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_PROFILE_API_MAIL_FIELD', cfg.get('ckanext.pnaig_oauth2.profile_api_mail_field', ''))).strip()
+        self.profile_api_groupmembership_field = str(os.environ.get('CKAN_PNAIG_OAUTH2_PROFILE_API_GROUPMEMBERSHIP_FIELD', cfg.get('ckanext.pnaig_oauth2.profile_api_groupmembership_field', ''))).strip()
+        self.sysadmin_group_name = str(os.environ.get('CKAN_PNAIG_OAUTH2_SYSADMIN_GROUP_NAME', cfg.get('ckanext.pnaig_oauth2.sysadmin_group_name', ''))).strip()
+        self.token_response_path = str(os.environ.get('CKAN_PNAIG_OAUTH2_TOKEN_RESPONSE_PATH', cfg.get('ckanext.pnaig_oauth2.token_response_path', ''))).strip()
+        self.token_response_key = str(os.environ.get('CKAN_PNAIG_OAUTH2_TOKEN_RESPONSE_KEY', cfg.get('ckanext.pnaig_oauth2.token_response_key', 'access_token'))).strip()
+        self.profile_response_path = str(os.environ.get('CKAN_PNAIG_OAUTH2_PROFILE_RESPONSE_PATH', cfg.get('ckanext.pnaig_oauth2.profile_response_path', ''))).strip()
 
         site_url = cfg.get('ckan.site_url', 'http://localhost:5000')
         root_path = cfg.get('ckan.root_path')
@@ -146,11 +146,17 @@ class OAuth2Helper(object):
         session.register_compliance_hook('access_token_response', _fix_access_token)
         return session
 
-    def challenge(self, came_from_url):
+    def get_authorization_url(self, came_from_url):
+        '''Return the OAuth2 authorization URL without redirecting.'''
         state = generate_state(came_from_url)
         oauth = OAuth2Session(self.client_id, redirect_uri=self.redirect_uri, scope=self.scope, state=state)
-        oauth = self._compliance_fix(oauth)  # Apply compliance fixes
+        oauth = self._compliance_fix(oauth)
         auth_url, _ = oauth.authorization_url(self.authorization_endpoint)
+        log.debug('get_authorization_url: {0}'.format(auth_url))
+        return auth_url
+
+    def challenge(self, came_from_url):
+        auth_url = self.get_authorization_url(came_from_url)
         log.debug('Challenge: Redirecting challenge to page {0}'.format(auth_url))
         # CKAN 2.6 only supports bytes
         return toolkit.redirect_to(auth_url)#.encode('utf-8'))
@@ -205,7 +211,7 @@ class OAuth2Helper(object):
     def query_profile_api_default(self, token):
         try:
             headers = {
-                'X-Tapis-Token': token['access_token']
+                'Authorization': f"Bearer {token['access_token']}"
             }
             profile_response = requests.get(self.profile_api_url, headers=headers, verify=self.verify_https)
             if not profile_response.ok:
